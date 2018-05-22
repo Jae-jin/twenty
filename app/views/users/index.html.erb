@@ -1,0 +1,8 @@
+<h1>회원 가입 공부중입니다.</h1>
+<% @users.each do |u| %>
+    <li><%=u.name%></li>
+<% end %>
+<% if user_signed_in? %>
+    로그인한 유저 :
+    <%= current_user.email %>
+<% end %>

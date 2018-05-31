@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'posts/folw'
   root 'posts#index'
   resources :posts, except: [:show] do
     resources :comments, only: [:create, :destroy]

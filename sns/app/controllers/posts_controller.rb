@@ -11,6 +11,10 @@ class PostsController < ApplicationController
   def new
   end
   
+  def folw
+    @fposts = Post.where(user_id: current_user.followers.ids)
+  end
+  
   def create
     new_post = Post.new(user_id: current_user.id,
                         content: params[:content],
